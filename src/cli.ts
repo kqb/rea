@@ -42,6 +42,7 @@ import { registerBrowserScenarioCommands } from "./cliBrowserScenarioCommands.js
 import { registerElectronCommands } from "./cli/electronCommands.js";
 import { registerJavaScriptRuntimeObservationCommands } from "./cliJavaScriptRuntimeCommands.js";
 import { registerApplicationCommands } from "./cli/applicationCommands.js";
+import { registerOmpSurfaceCommands } from "./cli/ompSurfaceCommands.js";
 import { presentOmittableDefaults } from "./cli/omittableDefaults.js";
 import type { CliInstance } from "./cli/types.js";
 import {
@@ -128,6 +129,7 @@ export const createCli = (
   registerElectronCommands(cli, logger, environment);
   registerJavaScriptRuntimeObservationCommands(cli, logger);
   registerApplicationCommands(cli, logger);
+  registerOmpSurfaceCommands(cli, logger, environment);
   presentOmittableDefaults(cli);
   if (resultOutput !== undefined) streamCliCommandResults(cli, resultOutput);
   return cli;

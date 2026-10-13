@@ -5,6 +5,7 @@ import {
 } from "./application/Doctor.js";
 import { fileURLToPath } from "node:url";
 import { inspectSystemGhidraProvider } from "./ghidra/GhidraDoctor.js";
+import { inspectOmpSurfaceProvider } from "./omp/OmpSurfaceDoctor.js";
 import { inspectIdaRegistration } from "./ida/IdaDoctor.js";
 import { selectLinuxPrivateDisplayStrategy } from "./hopper/LinuxPrivateDisplayProbe.js";
 
@@ -17,6 +18,7 @@ export const createSystemDoctorHost = (
     providerInspections: async () => [
       await inspectSystemGhidraProvider(environment),
       inspectIdaRegistration(environment.REA_IDA_MCP_CONFIG),
+      await inspectOmpSurfaceProvider(environment),
     ],
     linuxDemoRuntimeCheck: () => inspectLinuxPrivateDisplay(environment),
   });

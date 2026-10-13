@@ -142,6 +142,9 @@ export const CLI_COMMANDS = Object.freeze({
   projectAndroidApplicationGraph: "project-android-application-graph",
   projectAppleApplicationGraph: "project-apple-application-graph",
   projectHarmonyApplicationGraph: "project-harmony-application-graph",
+  listOmpProviders: "list-omp-providers",
+  listOmpAgents: "list-omp-agents",
+  ompModelCall: "omp-model-call",
 });
 
 /** Ordered primary CLI inventory; aliases are intentionally excluded. */
