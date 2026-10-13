@@ -391,6 +391,12 @@ export const OMP_PROVIDERS = [
       loginOnly: true,
     },
   ),
+  // Search providers with auth-broker login entries (also present as web:*
+  // search catalog models; `omp auth-broker list --json`, omp/18.10.3).
+  core("exa", ["EXA_API_KEY"], "Exa search/MCP key; alternatively /login exa"),
+  core("kagi", ["KAGI_API_KEY"], "Kagi search key"),
+  core("parallel", ["PARALLEL_API_KEY"], "Parallel search key"),
+  core("tavily", ["TAVILY_API_KEY"], "Tavily search key"),
   // Web/search catalog (provider ID `web`, kind `search`; `omp models --kind all --json`).
   core("web:brave", ["BRAVE_API_KEY"], "Brave search key or stored credential"),
   core("web:duckduckgo", [], "No key env documented; keyless/unspecified", {
